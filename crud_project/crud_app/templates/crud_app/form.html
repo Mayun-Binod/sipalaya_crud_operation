@@ -28,8 +28,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-              </ul>
-              
+            </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -40,31 +39,34 @@
     <!-- navbar section end -->
 
     <h1 class="text-center alert alert-info">Show Student Information</h1>
-    <div class="conatainer">
+    <div class="container"> <!-- corrected the typo here -->
         <div class="row">
             <div class="col-10 mx-auto alert alert-success">
-                <form method="POST" action="">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                      <label for="hello" class="form-label">FUll Name</label>
-                      <input type="text" name="name" class="form-control" id="hello" aria-describedby="emailHelp">
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="age" class="form-label">Age</label>
-                        <input type="number" name="age" class="form-control" id="age" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="age" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="age" aria-describedby="emailHelp">
-                      </div>
-                      <div class="form-floating">
-                        <textarea name="message" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Message</label>
-                      </div>
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form> 
+              <form method="POST" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="hello" class="form-label">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="hello" aria-describedby="emailHelp">
+                </div>
+            
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" name="age" class="form-control" id="age" aria-describedby="ageHelp">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+            
+                <div class="form-floating">
+                    <textarea name="message" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Message</label>
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
             </div>
         </div>
     </div>
