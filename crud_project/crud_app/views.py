@@ -5,6 +5,13 @@ def home(request):
     stud = Student_Detail.objects.all() 
     return render(request, 'crud_app/home.html', {"stud": stud})
 
+def about(request):
+    return render (request,'crud_app/about.html')
+
+def contact(request):
+    return render (request,'crud_app/contact.html')
+
+
 def form(request):
     if request.method == "POST":
         fm = request.POST
