@@ -8,4 +8,4 @@ class Student_Detail(models.Model):
     age=models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     email=models.EmailField(max_length=200,unique=True,null=True)
     message=models.CharField(max_length=255)
-   
+    isdelete=models.BooleanField(default=False)

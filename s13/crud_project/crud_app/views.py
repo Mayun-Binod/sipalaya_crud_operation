@@ -1,11 +1,18 @@
 from django.shortcuts import render,redirect
 from .models import Student
 from django.contrib import messages
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
-   data=Student.objects.filter(isdelete=False)
+   searched=request.GET.get('searched')
+   if searched:
+      data=Student.objects.filter(Q(name__icontains=searched)|Q(age__iexact=searched)|Q(email__icontains=searched))
+      data=data.filter(isdelete=False)
+   else:
+    data=Student.objects.filter(isdelete=False)
    return render(request,'crud_app/home.html',{'data':data})
+
 def form(request):
     try:
         if request.method=='POST':

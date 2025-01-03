@@ -3,7 +3,7 @@ from .models import Student_Detail
 from django.contrib import messages
 
 def home(request):
-    stud = Student_Detail.objects.all() 
+    stud = Student_Detail.objects.filter(isdelete=False) 
     return render(request, 'crud_app/home.html', {"stud": stud})
 
 def about(request):
@@ -36,4 +36,15 @@ def form(request):
         messages.success(request,f"error:{str(e)}")     
      
     return render(request, 'crud_app/form.html')
+
+def delete_data(request,id): #id=7
+    data=Student_Detail.objects.get(id=id)
+    # data.delete() # hard-delete
+    data.isdelete=True #soft delete
+    data.save()
+    return redirect('home')
+
+
+
+
 

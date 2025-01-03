@@ -13,6 +13,7 @@
                     <th>Age</th>
                     <th>Email</th>
                     <th>Message</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,11 @@
                     <td>{{ student.age }}</td>
                     <td>{{ student.email }}</td>
                     <td>{{ student.message }}</td>
+                    <td>
+                        <button class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
+                        <a href="{% url 'delete_data' student.id  %}"><button class="btn btn-danger"><i class="fa-solid fa-trash"></i>Delete</button>
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

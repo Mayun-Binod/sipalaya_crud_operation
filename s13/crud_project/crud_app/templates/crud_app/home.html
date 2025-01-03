@@ -40,6 +40,9 @@
                  
                </tbody>
              </table>
+             {% if data|length < 1 %}
+            <h1 class="text-center alert alert-success"> data is not found in this table</h1>
+             {% endif %}
        </div>
    </div>
 </div>

@@ -5,4 +5,6 @@ urlpatterns = [
     path("form/",views.form,name="form"),
     path("about/",views.about,name="about"),
     path("contact/",views.contact,name="contact"),
+    path("delete/<int:id>/",views.delete_data,name="delete_data"),
+
 ]
